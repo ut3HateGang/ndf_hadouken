@@ -1,7 +1,16 @@
+import { snake } from '../snake/snake.mjs';
+
 let konamiCount = 0;
 let timer;
 
 const keypress = (e) => {
+  console.log('oui', e);
+  if (e.keyCode === 83) {
+    snake();
+  }
+  if (e.keyCode === 77) {
+    console.log('mes');
+  }
   timer = clearTimeout(timer);
   timer = setTimeout(() => {
     konamiCount = 0;
@@ -52,6 +61,7 @@ const keypress = (e) => {
     case 9:
       if (e.keyCode === 65) {
         console.log('KONAMI CODE');
+        snake();
       } else {
         konamiCount = 0;
       }
