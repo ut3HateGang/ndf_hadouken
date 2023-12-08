@@ -2,14 +2,19 @@ import { snake } from '../snake/snake.mjs';
 
 let konamiCount = 0;
 let timer;
-
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+function openModal() {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+}
 const keypress = (e) => {
   console.log('oui', e);
   if (e.keyCode === 83) {
     snake();
   }
   if (e.keyCode === 77) {
-    console.log('mes');
+    openModal();
   }
   timer = clearTimeout(timer);
   timer = setTimeout(() => {
@@ -61,7 +66,7 @@ const keypress = (e) => {
     case 9:
       if (e.keyCode === 65) {
         console.log('KONAMI CODE');
-        snake();
+        openModal();
       } else {
         konamiCount = 0;
       }
@@ -72,4 +77,29 @@ const keypress = (e) => {
 };
 document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => keypress(e));
+
+  const closeModalBtn = document.querySelector('.btn-close');
+
+  // close modal function
+  const closeModal = function () {
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+  };
+
+  // close the modal when the close button and overlay is clicked
+  closeModalBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+
+  // close modal when the Esc key is pressed
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+
+  // open modal function
+
+  // open modal event
 });
+
+//
