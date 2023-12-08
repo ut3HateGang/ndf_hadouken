@@ -4,7 +4,6 @@ export function startgame() {
       body {
             overflow: hidden;
         }
-
         .zerg {
           position: absolute;
           user-select: none;

@@ -176,5 +176,5 @@ export function snake() {
     ctx.font = '20px Arial';
   }
 
-  let game = setInterval(draw, 75);
+  let game = setInterval(draw, 100);
 }

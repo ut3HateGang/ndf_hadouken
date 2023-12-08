@@ -2,11 +2,11 @@
   "name": "ndf_easter_egg",
   "version": "1.0.0",
   "description": "",
-  "main": "scripts/index.js",
+  "main": "index/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html",
-    "build": "parcel build"
+    "build": "parcel build index.html"
   },
   "author": "",
   "license": "ISC",

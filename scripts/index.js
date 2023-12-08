@@ -9,10 +9,6 @@ function openModal() {
   overlay.classList.remove('hidden');
 }
 const keypress = (e) => {
-  console.log('oui', e);
-  if (e.keyCode === 83) {
-    startgame();
-  }
   if (e.keyCode === 77) {
     openModal();
   }
@@ -101,9 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnSnake = document.getElementById('btnSnake');
   const btnTetris = document.getElementById('btnTetris');
   btnRa.addEventListener('click', () => {
+    closeModal();
     startgame();
   });
   btnSnake.addEventListener('click', () => {
+    closeModal();
     snake();
   });
   btnTetris.addEventListener('click', () => {
