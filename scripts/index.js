@@ -1,4 +1,5 @@
 import { startgame } from '../radioactive-attack/script.mjs';
+import { snake } from '../snake/snake.mjs';
 let konamiCount = 0;
 let timer;
 const modal = document.querySelector('.modal');

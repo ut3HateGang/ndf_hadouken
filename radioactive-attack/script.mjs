@@ -5,14 +5,14 @@ export function startgame() {
             overflow: hidden;
         }
 
-      .zerg {
-            position: absolute;
-            user-select: none;
-            width: 24px;
-            height: 24px;
-            background-image: url('../assets/radioactif.png');
-            background-size: cover; /* ou background-size: contain; selon votre besoin */
-      }
+        .zerg {
+          position: absolute;
+          user-select: none;
+          width: 24px;
+          height: 24px;
+          background-image: url('./assets/radioactif.png');
+          background-size: cover; /* ou background-size: contain; selon votre besoin */
+        }
     `;
 
   document.head.appendChild(style);

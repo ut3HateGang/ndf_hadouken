@@ -1,5 +1,4 @@
 export function snake() {
-  // Créer le canvas
   let height = window.innerHeight;
   let width = window.innerWidth;
   const canvas = document.createElement('canvas');
@@ -17,7 +16,6 @@ export function snake() {
     };
   }
 
-  // Créer la div principale contenant le canvas et la div droite
   const container = document.createElement('div');
   container.style.display = 'flex';
   container.appendChild(canvas);
