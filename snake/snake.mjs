@@ -81,8 +81,8 @@ export function snake() {
   const colors = ['#67c211', '#7bad4c', '#4b8f0b', '#64804a', '#489401'];
 
   async function draw() {
-    height = window.innerHeight;
-    width = window.innerWidth;
+    height = Math.floor(window.innerHeight / box) * box;
+    width = Math.floor(window.innerWidth / box) * box;
 
     ctx.clearRect(0, 0, width, height);
     // ctx.fillStyle = '#faf3dd';
@@ -90,17 +90,17 @@ export function snake() {
     ctx.strokeStyle = 'rgba(0, 0, 0, 0.2)'; // Couleur du quadrillage
     ctx.lineWidth = 1; // Épaisseur de ligne
     // Lignes verticales
-    for (let i = 0; i <= canvas.width; i += box) {
+    for (let i = 0; i <= width; i += box) {
       ctx.beginPath();
       ctx.moveTo(i, 0);
-      ctx.lineTo(i, canvas.height);
+      ctx.lineTo(i, height);
       ctx.stroke();
     }
     // Lignes horizontales
-    for (let i = 0; i <= canvas.height; i += box) {
+    for (let i = 0; i <= height; i += box) {
       ctx.beginPath();
       ctx.moveTo(0, i);
-      ctx.lineTo(canvas.width, i);
+      ctx.lineTo(width, i);
       ctx.stroke();
     }
     for (let i = 0; i < snake.length; i++) {
@@ -126,10 +126,10 @@ export function snake() {
     if (d === 'RIGHT') snakeX += box;
     if (d === 'DOWN') snakeY += box;
 
-    if (snakeX < 0) snakeX = canvas.width - box;
-    if (snakeX >= canvas.width) snakeX = 0;
-    if (snakeY < 0) snakeY = canvas.height - box;
-    if (snakeY >= canvas.height) snakeY = 0;
+    if (snakeX < 0) snakeX = width - box;
+    if (snakeX >= width) snakeX = 0;
+    if (snakeY < 0) snakeY = height - box;
+    if (snakeY >= height) snakeY = 0;
 
     let newHead = {
       x: snakeX,
