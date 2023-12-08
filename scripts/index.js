@@ -96,6 +96,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  const btnRa = document.getElementById('btnRa');
+  const btnSnake = document.getElementById('btnSnake');
+  const btnTetris = document.getElementById('btnTetris');
+  btnRa.addEventListener('click', () => {
+    startgame();
+  });
+  btnSnake.addEventListener('click', () => {
+    snake();
+  });
+  btnTetris.addEventListener('click', () => {
+    window.location = 'https://tetris404-6wko0ee43-valps-projects.vercel.app/';
+  });
   // open modal function
 
   // open modal event
