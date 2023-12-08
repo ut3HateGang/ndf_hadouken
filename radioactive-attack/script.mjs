@@ -60,8 +60,10 @@ export function startgame() {
     for (let i = 0; i < 10; i++) {
       createZerg();
     }
-    const interval = setInterval(createZerg, 1000);
-    setInterval(moveZergs, 30);
+
+    const intervalCreate = setInterval(createZerg, 1000);
+
+    const intervalMove = setInterval(moveZergs, 30);
   }
 
   function moveZergs() {
@@ -69,8 +71,12 @@ export function startgame() {
 
     zergs.forEach((zerg) => {
       const nearestParagraph = findNearestParagraph(zerg);
-      moveTowards(zerg, nearestParagraph);
 
+      moveTowards(zerg, nearestParagraph);
+      if (!nearestParagraph) {
+        clearInterval(intervalCreate);
+        clearInterval(intervalMove);
+      }
       if (isColliding(zerg, nearestParagraph)) {
         nearestParagraph.style.opacity = 0.0;
       }

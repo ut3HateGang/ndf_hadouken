@@ -4,7 +4,7 @@ export function snake() {
   const canvas = document.createElement('canvas');
   canvas.id = 'game-board';
   let foods = [];
-  const box = 20;
+  const box = 30;
 
   canvas.width = width;
   canvas.height = height;
@@ -176,5 +176,5 @@ export function snake() {
     ctx.font = '20px Arial';
   }
 
-  let game = setInterval(draw, 100);
+  let game = setInterval(draw, 75);
 }
