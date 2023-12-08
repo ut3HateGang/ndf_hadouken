@@ -1,3 +1,4 @@
+function startgame() {
 const style = document.createElement('style');
 style.innerText = `
       body {
@@ -165,3 +166,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // Remplace le contenu du paragraphe par le nouveau contenu avec les balises span
     paragraph.innerHTML = newContent;
 });
+};
