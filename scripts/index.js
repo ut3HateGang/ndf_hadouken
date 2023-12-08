@@ -1,5 +1,4 @@
-import { snake } from '../snake/snake.mjs';
-
+import { startgame } from '../radioactive-attack/script.mjs';
 let konamiCount = 0;
 let timer;
 const modal = document.querySelector('.modal');
@@ -11,7 +10,7 @@ function openModal() {
 const keypress = (e) => {
   console.log('oui', e);
   if (e.keyCode === 83) {
-    snake();
+    startgame();
   }
   if (e.keyCode === 77) {
     openModal();
